@@ -1,0 +1,33 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>Danh sách mô hình</h1>
+    <a href="{{ route('model-products.create') }}" class="btn btn-primary">Thêm mới</a>
+
+    @if (session('success'))
+        <div class="alert alert-success mt-2">{{ session('success') }}</div>
+    @endif
+
+    <table class="table mt-3">
+        <tr>
+            <th>ID</th><th>Tên</th><th>Giá</th><th>Số lượng</th><th>Hành động</th>
+        </tr>
+        @foreach ($products as $product)
+            <tr>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->price }} đ</td>
+                <td>{{ $product->quantity }}</td>
+                <td>
+                    <a href="{{ route('model-products.edit', $product) }}" class="btn btn-sm btn-warning">Sửa</a>
+                    <form method="POST" action="{{ route('model-products.destroy', $product) }}" style="display:inline">
+                        @csrf @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Xóa?')">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    </table>
+</div>
+@endsection

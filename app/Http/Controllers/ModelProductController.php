@@ -7,59 +7,49 @@ use Illuminate\Http\Request;
 
 class ModelProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $products = ModelProduct::all();
+        return view('model_products.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('model_products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required|numeric|min:0',
+            'quantity' => 'required|integer|min:0',
+        ]);
+
+        ModelProduct::create($request->all());
+        return redirect()->route('model-products.index')->with('success', 'Sản phẩm đã được thêm.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ModelProduct $modelProduct)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(ModelProduct $modelProduct)
     {
-        //
+        return view('model_products.edit', compact('modelProduct'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, ModelProduct $modelProduct)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required|numeric|min:0',
+            'quantity' => 'required|integer|min:0',
+        ]);
+
+        $modelProduct->update($request->all());
+        return redirect()->route('model-products.index')->with('success', 'Sản phẩm đã cập nhật.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(ModelProduct $modelProduct)
     {
-        //
+        $modelProduct->delete();
+        return redirect()->route('model-products.index')->with('success', 'Sản phẩm đã xóa.');
     }
 }
