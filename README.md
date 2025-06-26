@@ -29,6 +29,7 @@
 
 
 
+
 ## 💻 Code minh họa phần chính
 
 ### 📁 Model: `User.php`
@@ -38,4 +39,21 @@ public function orders()
 {
     return $this->hasMany(Order::class);
 }
-
+📁 Model: Product.php
+public function orders()
+{
+    return $this->belongsToMany(Order::class)->withPivot('quantity');
+}
+📁 Controller: ProductController.php
+public function index()
+{
+    $products = Product::all();
+    return view('products.index', compact('products'));
+}
+📁 View: resources/views/products/index.blade.php
+@foreach ($products as $product)
+    <div>{{ $product->name }} - {{ $product->price }} VNĐ</div>
+@endforeach
+🔗 Liên kết dự án
+📂 Link Repository GitHub:
+https://github.com/DoKhacHuy213/model-shop
