@@ -24,7 +24,8 @@
 
 ### 🔐 Trang đăng nhập
 
-![Screenshot 2025-06-26 083323](https://github.com/user-attachments/assets/4accf85f-aaa2-4ea8-9d05-0091e366d3d2)
+![Uploading Screenshot 2025-06-26 084830.png…]()
+
 
 
 ## 💻 Code minh họa phần chính
