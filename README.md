@@ -59,3 +59,16 @@ public function index()
 🔗 Liên kết dự án
 📂 Link Repository GitHub:
 https://github.com/DoKhacHuy213/model-shop
+⚙️ Công nghệ sử dụng
+Laravel 11
+
+PHP 8.x
+
+MySQL / MariaDB
+
+TailwindCSS / Bootstrap
+
+Laravel Breeze (xác thực)
+
+Cloud deployment: [Heroku / Vercel / Render / Codespaces]
+
