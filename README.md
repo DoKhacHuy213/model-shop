@@ -1,7 +1,7 @@
 # 🎮 Hệ thống quản lý bán đồ chơi
 
 ## 👨‍🎓 Họ tên sinh viên: Đỗ Khắc Huy  
-**Mã sinh viên:** 12345678
+**Mã sinh viên:23010020
 
 ---
 
@@ -18,6 +18,7 @@
 ---
 
 ## 🧱 Cấu trúc hệ thống (Class Diagram)
+![a6f8c2cf-2d91-4c31-a0d0-7d06863b1b98](https://github.com/user-attachments/assets/7e641ea3-aeb5-4ad0-9e51-91c957a0304f)
 
 
 ## 🖼️ Ảnh chụp màn hình chức năng chính
